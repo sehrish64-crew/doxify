@@ -15,10 +15,7 @@ const faqs = [
     q: 'How fast is the processing?',
     a: "Most files are processed in under 10 seconds. Large files or complex operations may take slightly longer. Premium users get priority processing for even faster results.",
   },
-  {
-    q: 'Can I use Doxsify for free?',
-    a: "Yes! Our Basic features are free to use with limitations (5 files/day, 10MB max). Upgrade to Premium or Ultimate for unlimited files and larger uploads.",
-  },
+
 ];
 
 export function FaqPreviewSection() {
