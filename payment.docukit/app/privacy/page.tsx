@@ -23,86 +23,52 @@ export default function PrivacyPage() {
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
           <div className="max-w-3xl mx-auto prose prose-slate dark:prose-invert prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-p:leading-relaxed max-w-none">
-            <LegalSection title="1. Introduction">
+            <LegalSection title="1. Information We Collect">
               <p>
-                Doxsify (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                We collect information you provide directly to us, including when you upload files for processing.
+              </p>
+              <p>
+                Uploaded files are automatically deleted after 1 hour.
               </p>
             </LegalSection>
 
-            <LegalSection title="2. Information We Collect">
-              <p>We collect the following types of information:</p>
-              <ul>
-                <li><strong>Account information:</strong> Email address, name, and password when you create an account.</li>
-                <li><strong>Usage data:</strong> IP address, browser type, pages visited, and time spent on our site.</li>
-                <li><strong>Files:</strong> Documents and images you upload for processing. These are deleted within 1 hour.</li>
-                <li><strong>Payment information:</strong> Handled entirely by Paddle, our payment processor. We do not store your payment card details.</li>
-              </ul>
-            </LegalSection>
-
-            <LegalSection title="3. How We Use Your Information">
-              <p>We use the information we collect to:</p>
-              <ul>
-                <li>Provide, maintain, and improve our services</li>
-                <li>Process transactions and send related information</li>
-                <li>Respond to your comments, questions, and requests</li>
-                <li>Monitor usage patterns and analyze trends</li>
-                <li>Detect and prevent fraudulent transactions and other illegal activities</li>
-                <li>Comply with legal obligations</li>
-              </ul>
-            </LegalSection>
-
-            <LegalSection title="4. File Security">
+            <LegalSection title="2. How We Use Your Information">
               <p>
-                We take file security extremely seriously. All file uploads are encrypted with 256-bit SSL during transfer. Files are processed in isolated, secure environments and are permanently deleted from our servers within 1 hour of processing. We do not read, analyze, share, or retain the content of your files.
+                We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.
               </p>
             </LegalSection>
 
-            <LegalSection title="5. Cookies">
+            <LegalSection title="3. Data Retention">
               <p>
-                We use essential cookies to operate our service, analytics cookies to understand usage, and preference cookies to remember your settings. You can control cookie settings through your browser. Disabling cookies may affect some functionality.
+                Uploaded files are automatically deleted from our servers after 1 hour. We do not permanently store any of your documents.
               </p>
             </LegalSection>
 
-            <LegalSection title="6. Third-Party Services">
-              <p>We work with trusted third parties to operate our service:</p>
-              <ul>
-                <li><strong>Paddle.com:</strong> Merchant of Record and payment processor for all subscriptions.</li>
-                <li><strong>Analytics providers:</strong> To understand how users interact with our service.</li>
-                <li><strong>Cloud infrastructure providers:</strong> To host and process files.</li>
-              </ul>
-              <p>These parties have their own privacy policies and we encourage you to review them.</p>
-            </LegalSection>
-
-            <LegalSection title="7. Data Retention">
+            <LegalSection title="4. Payment Processing">
               <p>
-                We retain account information for as long as your account is active. File data is deleted within 1 hour as described above. You may request deletion of your account and associated data at any time by contacting us at support@doxsify.com.
+                All payments are processed by Paddle.com. We do not store any credit card information on our servers. Paddle.com is the Merchant of Record for all our orders.
               </p>
             </LegalSection>
 
-            <LegalSection title="8. Your Rights (GDPR)">
-              <p>If you are located in the European Economic Area, you have the right to:</p>
-              <ul>
-                <li>Access your personal data</li>
-                <li>Correct inaccurate personal data</li>
-                <li>Request deletion of your personal data</li>
-                <li>Object to processing of your personal data</li>
-                <li>Request data portability</li>
-                <li>Withdraw consent at any time</li>
-              </ul>
-            </LegalSection>
-
-            <LegalSection title="9. Children's Privacy">
+            <LegalSection title="5. Your Rights">
               <p>
-                Our service is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal data from a child, we will take steps to delete that information.
+                You have the right to access, correct, or delete your personal information. Contact us at{' '}
+                <a href="mailto:support@docukit.site" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  support@docukit.site
+                </a>{' '}
+                for any requests.
               </p>
             </LegalSection>
 
-            <LegalSection title="10. Contact Us">
+            <LegalSection title="6. Contact Us">
               <p>
-                If you have any questions about this Privacy Policy, please contact us at:{' '}
-                <a href="mailto:support@doxsify.com" className="text-blue-600 dark:text-blue-400 hover:underline">
-                  support@doxsify.com
-                </a>
+                Email: <a href="mailto:support@docukit.site" className="text-blue-600 dark:text-blue-400 hover:underline">support@docukit.site</a>
+              </p>
+              <p>
+                Phone: <span className="text-slate-700 dark:text-slate-300">N/A</span>
+              </p>
+              <p>
+                Address: <span className="text-slate-700 dark:text-slate-300">N/A</span>
               </p>
             </LegalSection>
           </div>

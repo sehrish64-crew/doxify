@@ -81,7 +81,7 @@ export default function RefundPage() {
 
             <div className="mb-6 text-sm text-slate-600 dark:text-slate-400">
               <p>
-                Our order process is conducted by our online reseller Mollie.com. Mollie.com is the Merchant of Record for all our orders. Mollie provides all customer service inquiries and handles returns.
+                Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export default function RefundPage() {
 
             <LegalSection title="2. How to Request a Refund">
               <p>
-                To request a refund, email us at <a href="mailto:support@docukit.site" className="text-blue-600 dark:text-blue-400 hover:underline">support@docukit.site</a> with your order details and reason for refund.
+                To request a refund, email us at <a href="mailto: support@doxsify.com" className="text-blue-600 dark:text-blue-400 hover:underline"> support@doxsify.com</a> with your order details and reason for refund.
               </p>
             </LegalSection>
 

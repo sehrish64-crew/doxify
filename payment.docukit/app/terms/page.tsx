@@ -37,77 +37,31 @@ export default function TermsPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
           <div className="max-w-3xl mx-auto">
             <LegalSection title="1. Acceptance of Terms">
-              <p>
-                By accessing or using Doxsify (&quot;Service&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service. We reserve the right to update these terms at any time with notice.
-              </p>
+              <p>By accessing or using DocuKit, you agree to be bound by these Terms of Service.</p>
             </LegalSection>
 
             <LegalSection title="2. Description of Service">
-              <p>
-                Doxsify provides web-based document and image processing tools including but not limited to PDF conversion, merging, splitting, compression, rotation, password protection, and image format conversion.
-              </p>
+              <p>DocuKit provides document conversion and optimization tools. Users can upload files, process them, and download results.</p>
             </LegalSection>
 
             <LegalSection title="3. User Responsibilities">
-              <p>You agree that you will:</p>
-              <ul>
-                <li>Only upload files you own or have legal rights to process</li>
-                <li>Not use the service for illegal, harmful, or unauthorized purposes</li>
-                <li>Not attempt to reverse engineer, hack, or disrupt our service</li>
-                <li>Not upload files containing malware, viruses, or malicious code</li>
-                <li>Comply with all applicable laws in your jurisdiction</li>
-              </ul>
+              <p>You are responsible for all files you upload and ensuring you have the right to process them.</p>
             </LegalSection>
 
-            <LegalSection title="4. Intellectual Property">
-              <p>
-                You retain all intellectual property rights in the files you upload. By using our service, you grant Doxsify a limited, non-exclusive license to process your files solely for the purpose of providing the requested service. This license expires when your files are deleted.
-              </p>
+            <LegalSection title="4. Payments and Subscriptions">
+              <p>Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns.</p>
             </LegalSection>
 
-            <LegalSection title="5. Subscriptions and Payments">
-              <p>
-                Paid subscriptions are billed in advance on a monthly or annual basis. Payments are processed by Paddle.com, our Merchant of Record. By subscribing, you authorize recurring charges until you cancel. All prices are in USD unless otherwise stated.
-              </p>
+            <LegalSection title="5. Refund Policy">
+              <p>We offer a 14-day money-back guarantee for Pro subscriptions. Contact us within 14 days of purchase for a full refund.</p>
             </LegalSection>
 
-            <LegalSection title="6. Cancellation">
-              <p>
-                You may cancel your subscription at any time. Cancellation takes effect at the end of the current billing period. You will retain access to paid features until the end of the period. No partial refunds are provided for unused time except as stated in our Refund Policy.
-              </p>
+            <LegalSection title="6. Limitation of Liability">
+              <p>DocuKit is provided "as is" without warranties. We are not liable for any damages arising from use of our service.</p>
             </LegalSection>
 
-            <LegalSection title="7. Limitation of Liability">
-              <p>
-                Doxsify is provided &quot;as is&quot; without warranties of any kind. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of the service. Our total liability to you shall not exceed the amount you paid in the 12 months prior to the claim.
-              </p>
-            </LegalSection>
-
-            <LegalSection title="8. Service Availability">
-              <p>
-                We strive for 99.9% uptime but do not guarantee uninterrupted service. We may perform maintenance, updates, or experience technical issues. We are not liable for any loss resulting from service interruptions.
-              </p>
-            </LegalSection>
-
-            <LegalSection title="9. Termination">
-              <p>
-                We reserve the right to suspend or terminate your account if you violate these terms, engage in fraudulent activity, or for any other reason at our discretion. You may terminate your account at any time by contacting support.
-              </p>
-            </LegalSection>
-
-            <LegalSection title="10. Governing Law">
-              <p>
-                These terms are governed by applicable laws. Any disputes shall be resolved through binding arbitration. If any provision is found unenforceable, the remaining provisions remain in full effect.
-              </p>
-            </LegalSection>
-
-            <LegalSection title="11. Contact">
-              <p>
-                For questions about these Terms, contact us at{' '}
-                <a href="mailto:support@doxsify.com" className="text-blue-600 dark:text-blue-400 hover:underline">
-                  support@doxsify.com
-                </a>
-              </p>
+            <LegalSection title="7. Contact Information">
+              <p>Email: support@docukit.site</p>
             </LegalSection>
           </div>
         </section>
