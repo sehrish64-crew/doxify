@@ -8,7 +8,7 @@ import { HowItWorksSection } from '@/components/home/how-it-works-section';
 import { StatsSection } from '@/components/home/stats-section';
 import { TestimonialsSection } from '@/components/home/testimonials-section';
 import { FaqPreviewSection } from '@/components/home/faq-preview-section';
-import { PricingPreviewSection } from '@/components/home/pricing-preview-section';
+// import { PricingPreviewSection } from '@/components/home/pricing-preview-section';
 
 export const metadata: Metadata = {
   title: 'Doxsify – Powerful PDF & Image Tools for Everyone',
@@ -27,7 +27,7 @@ export default function HomePage() {
         <HowItWorksSection />
         <StatsSection />
         <TestimonialsSection />
-        <PricingPreviewSection />
+        {/* <PricingPreviewSection /> */}
         <FaqPreviewSection />
       </main>
       <Footer />
