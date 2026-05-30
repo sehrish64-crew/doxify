@@ -64,6 +64,13 @@ export default function ContactPage() {
                       color: 'from-emerald-500 to-emerald-600',
                     },
                     {
+                      icon: Building2,
+                      label: 'Office Address',
+                      value: 'SIU OFFICES, 4-6 GREATOREX STREET, LONDON, UNITED KINGDOM E1 5NF',
+                      href: null,
+                      color: 'from-slate-500 to-slate-700',
+                    },
+                    {
                       icon: Clock,
                       label: 'Response Time',
                       value: 'Within 24 hours (Priority: 2 hours)',

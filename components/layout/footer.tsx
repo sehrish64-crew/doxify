@@ -48,6 +48,11 @@ export function Footer() {
                 support@doxsify.com
               </a>
             </div>
+            <div className="text-sm text-slate-400 leading-relaxed">
+              <p>SIU OFFICES, 4-6 GREATOREX STREET</p>
+              <p>LONDON</p>
+              <p>UNITED KINGDOM E1 5NF</p>
+            </div>
           </div>
 
           {/* Links */}

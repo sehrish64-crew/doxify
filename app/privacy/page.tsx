@@ -21,6 +21,14 @@ export default function PrivacyPage() {
           </div>
         </section>
 
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950">
+          <div className="max-w-3xl mx-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 mb-10">
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Doxsify is operated by Nexlify Labs Ltd. This Privacy Policy applies to Doxsify services provided under Nexlify Labs Ltd.
+            </p>
+          </div>
+        </section>
+
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
           <div className="max-w-3xl mx-auto prose prose-slate dark:prose-invert prose-headings:font-bold prose-headings:text-slate-900 dark:prose-headings:text-white prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-p:leading-relaxed max-w-none">
             <LegalSection title="1. Introduction">

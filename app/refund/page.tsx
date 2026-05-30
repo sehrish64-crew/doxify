@@ -38,6 +38,11 @@ export default function RefundPage() {
 
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
           <div className="max-w-3xl mx-auto">
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-6 mb-10">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                Doxsify is operated by Nexlify Labs Ltd. This Refund Policy applies to Doxsify services provided under Nexlify Labs Ltd.
+              </p>
+            </div>
             {/* Summary Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
               {[
