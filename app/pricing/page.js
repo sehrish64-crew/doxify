@@ -173,7 +173,7 @@ export default function PricingPage() {
                   </ul>
                   
                   <button
-                    onClick={() => handleNavigateToCheckout(plan)}
+                    onClick={() => handleCheckout(plan)}
                     disabled={loading}
                     className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
                       !loading
