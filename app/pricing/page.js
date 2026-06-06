@@ -50,7 +50,7 @@ export default function PricingPage() {
   const plans = [
     {
       name: 'Basic',
-      price: '£50',
+      price: '£30',
       priceId: 'pri_01kt40zs139mbp1hv7rhpzwmxa',
       description: 'Essential PDF & image tools',
       features: [
@@ -65,7 +65,7 @@ export default function PricingPage() {
     },
     {
       name: 'Standard',
-      price: '£70',
+      price: '£40',
       priceId: 'pri_01kt41380gha533r6162t49wb7',
       description: 'Professional tools & features',
       features: [
@@ -76,11 +76,12 @@ export default function PricingPage() {
         'Batch processing (up to 5)',
         'Chat support',
         'Priority processing'
-      ]
+      ],
+      popular: true
     },
     {
       name: 'Premium',
-      price: '£90',
+      price: '£50',
       priceId: 'pri_01kt41237433x7grg91yfm0ygj',
       description: 'Complete suite & priority support',
       features: [
@@ -92,8 +93,7 @@ export default function PricingPage() {
         'Advanced compression',
         'API access',
         'Custom workflows'
-      ],
-      popular: true
+      ]
     }
   ];
 
