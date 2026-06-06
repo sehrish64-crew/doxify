@@ -1,16 +1,32 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { usePaddle } from '../../hooks/use-paddle';
 
 export default function PricingPage() {
+  const router = useRouter();
   const { paddleReady, error: paddleError } = usePaddle();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const displayError = error || paddleError || '';
+
+  const handleNavigateToCheckout = (plan) => {
+    // Map plan names to alt page routes
+    const planRouteMap = {
+      'Basic': 'alt-basic',
+      'Standard': 'alt-premium',
+      'Premium': 'alt-ultimate'
+    };
+    
+    const altRoute = planRouteMap[plan.name];
+    if (altRoute) {
+      router.push(`/pricing/${altRoute}`);
+    }
+  };
 
   const handleCheckout = (plan) => {
     if (!paddleReady) {
@@ -157,10 +173,10 @@ export default function PricingPage() {
                   </ul>
                   
                   <button
-                    onClick={() => handleCheckout(plan)}
-                    disabled={!paddleReady || loading}
+                    onClick={() => handleNavigateToCheckout(plan)}
+                    disabled={loading}
                     className={`w-full py-3 rounded-lg font-semibold transition-all duration-200 ${
-                      paddleReady && !loading
+                      !loading
                         ? plan.popular
                           ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg dark:bg-blue-600 dark:hover:bg-blue-700'
                           : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950'
