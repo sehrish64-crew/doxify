@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/paddle.ts", "app/pricing/page.js", "app/pricing/alt-premium/page.js", "app/pricing/alt-ultimate/page.js", "app/pricing/alt-basic/page.js"],
   "exclude": ["node_modules"]
 }

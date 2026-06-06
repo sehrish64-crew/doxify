@@ -1,25 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { Mail, MessageSquare, Building2, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, MessageSquare, Building2, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError('');
+
+    try {
+      const formData = new FormData(formRef.current!);
+      const data = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit message');
+      }
+
       setSubmitted(true);
-    }, 1500);
+      formRef.current?.reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -131,92 +162,105 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <>
+                  {error && (
+                    <Alert variant="destructive" className="mb-5">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  )}
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName" className="text-slate-700 dark:text-slate-300">
+                          First Name
+                        </Label>
+                        <Input
+                          id="firstName"
+                          name="firstName"
+                          placeholder="John"
+                          required
+                          className="rounded-xl border-slate-300 dark:border-slate-700"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName" className="text-slate-700 dark:text-slate-300">
+                          Last Name
+                        </Label>
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          placeholder="Doe"
+                          required
+                          className="rounded-xl border-slate-300 dark:border-slate-700"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="firstName" className="text-slate-700 dark:text-slate-300">
-                        First Name
+                      <Label htmlFor="email" className="text-slate-700 dark:text-slate-300">
+                        Email Address
                       </Label>
                       <Input
-                        id="firstName"
-                        placeholder="John"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="john@example.com"
                         required
                         className="rounded-xl border-slate-300 dark:border-slate-700"
                       />
                     </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="lastName" className="text-slate-700 dark:text-slate-300">
-                        Last Name
+                      <Label htmlFor="subject" className="text-slate-700 dark:text-slate-300">
+                        Subject
                       </Label>
                       <Input
-                        id="lastName"
-                        placeholder="Doe"
+                        id="subject"
+                        name="subject"
+                        placeholder="How can we help?"
                         required
                         className="rounded-xl border-slate-300 dark:border-slate-700"
                       />
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-slate-700 dark:text-slate-300">
-                      Email Address
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      required
-                      className="rounded-xl border-slate-300 dark:border-slate-700"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-slate-700 dark:text-slate-300">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us more about your question or issue..."
+                        rows={6}
+                        required
+                        className="rounded-xl border-slate-300 dark:border-slate-700 resize-none"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="subject" className="text-slate-700 dark:text-slate-300">
-                      Subject
-                    </Label>
-                    <Input
-                      id="subject"
-                      placeholder="How can we help?"
-                      required
-                      className="rounded-xl border-slate-300 dark:border-slate-700"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-slate-700 dark:text-slate-300">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us more about your question or issue..."
-                      rows={6}
-                      required
-                      className="rounded-xl border-slate-300 dark:border-slate-700 resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={loading}
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white border-0 shadow-lg shadow-blue-500/25 rounded-xl"
-                  >
-                    {loading ? (
-                      <span className="flex items-center gap-2">
-                        <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2">
-                        <Send className="w-4 h-4" />
-                        Send Message
-                      </span>
-                    )}
-                  </Button>
-                </form>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={loading}
+                      className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white border-0 shadow-lg shadow-blue-500/25 rounded-xl"
+                    >
+                      {loading ? (
+                        <span className="flex items-center gap-2">
+                          <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          <Send className="w-4 h-4" />
+                          Send Message
+                        </span>
+                      )}
+                    </Button>
+                  </form>
+                </>
               )}
             </div>
           </div>
